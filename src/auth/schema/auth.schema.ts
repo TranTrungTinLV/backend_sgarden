@@ -1,9 +1,11 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+/* eslint-disable prettier/prettier */
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
 @Schema({
   timestamps: true,
 })
-export class User {
+export class User extends Document {
   @Prop()
   username: string;
   @Prop()
@@ -13,7 +15,7 @@ export class User {
   })
   email: string;
   @Prop()
-  sex: boolean;
+  sex: string;
   @Prop()
   birthday: string;
   @Prop()
@@ -32,4 +34,4 @@ export class User {
   avatar: string;
 }
 
-export const UserSchema = SchemaFactory.createForClass(User)
+export const UserSchema = SchemaFactory.createForClass(User);
