@@ -6,7 +6,7 @@ import { UserSchema } from './schema/auth.schema';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { config } from 'process';
+
 @Module({
   imports: [
     PassportModule.register({
@@ -21,9 +21,9 @@ import { config } from 'process';
         };
       },
     }),
-    MongooseModule.forFeature([{ name: 'user', schema: UserSchema }]),
+    MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]), //đkm mày User đéo phải user
   ],
-  providers: [AuthService],
   controllers: [AuthController],
+  providers: [AuthService],
 })
 export class AuthModule {}

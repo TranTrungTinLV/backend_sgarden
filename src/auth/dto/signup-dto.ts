@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsNotEmpty,
   IsString,
+  Matches,
   MinLength,
 } from 'class-validator';
 
@@ -14,6 +15,9 @@ export class SignupDto {
   @IsNotEmpty()
   @IsString()
   @MinLength(6)
+  @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,{
+    message: "Passwork to weak"
+  })
   readonly password: string;
 
   @IsNotEmpty()
@@ -22,7 +26,7 @@ export class SignupDto {
 
   @IsNotEmpty()
   @IsBoolean()
-  readonly sex: boolean;
+  readonly sex: string;
 
   @IsNotEmpty()
   @IsString()
