@@ -2,7 +2,9 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { IntroductionService } from './introduction.service';
 import { Introduction } from './schema/introduction.shcema';
 import { IntroductionDto } from './dto/create-introdution';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Introduction')
 @Controller('introduction')
 export class IntroductionController {
   constructor(private introductionService: IntroductionService) {}

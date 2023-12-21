@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { IntroductionModule } from "./introduction/introduction.module";
 import { InformationModule } from './information/information.module';
 import { AuthModule } from './auth/auth.module';
+import { OderModule } from './oder/oder.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -16,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
     IntroductionModule,
     InformationModule,
     AuthModule,
+    OderModule,
   ],
 })
 export class AppModule {}
